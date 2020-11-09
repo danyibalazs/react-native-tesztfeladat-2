@@ -12,8 +12,8 @@ export default function App() {
       <Stack key="root">
         <Tabs
           hideNavBar
-          tabBarStyle={{ backgroundColor: '#fbfbfb'}}
-          labelStyle={{fontSize: 18, padding: 10}} 
+          tabBarStyle={{ backgroundColor: '#fbfbfb', }}
+          labelStyle={{fontSize: 18, }}
           wrap={false}    
         >
           <Scene key="text" title="Text"  component={TextComponent} initial />

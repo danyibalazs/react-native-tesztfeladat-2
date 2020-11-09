@@ -10,7 +10,7 @@ const ButtonComponent = () => {
 
   return (
     <View style={styles.container}>
-      <Button title="Click me" onPress={onPressBtn}></Button>
+      <Button title="Click me!" onPress={onPressBtn}></Button>
     </View>
   );
 }
