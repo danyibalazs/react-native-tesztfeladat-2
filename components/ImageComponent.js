@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Image, View, Alert } from 'react-native';
 
 const ImageComponent = (props) => {
-  const burgerPath = '../assets/burger.jpg';
-  const steakPath = '../assets/steak.jpg';
+  const buildingImgPath = '../assets/building.jpg';
+  const bridgeImgPath = '../assets/bridge.jpg';
 
   const [imageChanged, setImageChanged] = useState(false);
 
@@ -12,9 +12,9 @@ const ImageComponent = (props) => {
         
         let imagePath;
         if (!imageChanged) {
-          imagePath = steakPath;
+          imagePath = buildingImgPath;
         } else {
-          imagePath = burgerPath;
+          imagePath = bridgeImgPath;
         }
 
         Alert.alert(
@@ -29,8 +29,8 @@ const ImageComponent = (props) => {
   return (
     <View style={styles.container}>
       { imageChanged ? 
-        <Image style={styles.image} source={require(steakPath)} resizeMode="contain" /> :
-        <Image style={styles.image} source={require(burgerPath)} resizeMode="contain" />
+        <Image style={styles.image} source={require(buildingImgPath)} resizeMode='cover' /> :
+        <Image style={styles.image} source={require(bridgeImgPath)} resizeMode='cover' />
       }  
     </View>
   );
@@ -40,11 +40,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    
   },
   image: {
-    
-    width: '100%',
+    width: '100%',  
   }
 });
 
