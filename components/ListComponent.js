@@ -5,8 +5,12 @@ import ListItemComponent from './ListItemComponent';
 
 const ListComponent = () => {
 
-  const [isLoading, setLoading] = useState(true);
   const [cities, setCities] = useState([]);
+  const [cityState, setCityState] = useState();
+
+  const onSelectCity = (stateId) => {
+    setCityState(stateId);
+  }
 
   useEffect(() => {
     fetch('http://majorbence.hu/GmEn2AZwoD/?cities=true')
@@ -17,19 +21,18 @@ const ListComponent = () => {
       .catch((error) => {
         console.log(error);
       })
-      .finally(() => setLoading(false))
   }, [])
 
 
   return (
     <View style={styles.container}>
-      {isLoading ? null : 
-          <FlatList
-            data={cities}
-            renderItem={itemData =>
-            <ListItemComponent name={itemData.item.vnev} />}
-          >
-          </FlatList>
+      {cities ?  
+        <FlatList
+          data={cities}
+          renderItem={itemData =>
+          <ListItemComponent data={itemData.item} onSelectCity={onSelectCity} selectedState={cityState} />}
+        /> :
+        null
       } 
     </View>
   );
@@ -37,9 +40,8 @@ const ListComponent = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 30,
+    padding: 30
   }
-  
 });
 
 export default ListComponent;
