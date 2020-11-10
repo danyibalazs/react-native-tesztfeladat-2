@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Card} from 'react-native';
 
 
 
@@ -13,7 +13,7 @@ const ListItemComponent = props => {
     }
   }
 
-  return (
+  return ( 
     <TouchableOpacity activeOpacity={0.5} onPress={() => props.onSelectCity(props.data.megyeid)}>
       <View style={[styles.listItem, {borderColor: getBorderColor()}]} >
         <Text style={styles.text}>{props.data.vnev}</Text>
