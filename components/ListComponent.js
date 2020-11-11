@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 
 import ListItemComponent from './ListItemComponent';
 
@@ -23,14 +23,17 @@ const ListComponent = () => {
       })
   }, [])
 
-
   return (
     <View style={styles.container}>
       {cities ?  
         <FlatList
           data={cities}
           renderItem={itemData =>
-          <ListItemComponent data={itemData.item} onSelectCity={onSelectCity} selectedState={cityState} />}
+          <ListItemComponent 
+            data={itemData.item} 
+            onSelectCity={onSelectCity} 
+            selectedState={cityState} 
+          />}
         /> :
         null
       } 
@@ -40,7 +43,7 @@ const ListComponent = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 30
+    paddingVertical: 30
   }
 });
 

@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Card} from 'react-native';
-
-
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const ListItemComponent = props => {
   
@@ -26,6 +24,7 @@ const styles = StyleSheet.create({
   listItem: {
     padding: 10,
     marginVertical: 10,
+    marginHorizontal: 30,
     backgroundColor: '#fbfbfb',
     borderWidth: 1,
     borderRadius: 10
